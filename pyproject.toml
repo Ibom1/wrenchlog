@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wrenchlog"
+version = "0.1.0"
+description = "Track car maintenance and see what's due next."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Otoobong John" }]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+wrenchlog = "wrenchlog.cli:main"
+
+[tool.setuptools]
+packages = ["wrenchlog"]

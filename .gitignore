@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+# Databases hold your own records; never commit them.
+*.db
+*.sqlite
+*.sqlite3
