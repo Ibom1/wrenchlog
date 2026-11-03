@@ -2,8 +2,9 @@
 # Builds a throwaway database with a made-up car and shows what wrenchlog reports.
 # Run from the project folder:  sh examples/demo.sh
 set -e
-DB="${TMPDIR:-/tmp}/wrenchlog-demo.db"
-rm -f "$DB"
+demo_dir=$(mktemp -d "${TMPDIR:-/tmp}/wrenchlog-demo.XXXXXX")
+trap 'rm -f "$DB"; rmdir "$demo_dir"' EXIT
+DB="$demo_dir/wrenchlog.db"
 w() { python -m wrenchlog --db "$DB" --today 2026-11-03 "$@"; }
 
 w add-car civic --make Honda --model Civic --year 2018
